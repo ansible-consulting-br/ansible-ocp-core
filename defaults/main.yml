@@ -1,2 +1,5 @@
 ---
 # defaults file for core
+
+debug_enabled: false
+
