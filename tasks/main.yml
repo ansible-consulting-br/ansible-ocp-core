@@ -38,6 +38,9 @@
   kubernetes.core.k8s:
     namespace: "{{ core_install_namespace }}"
     definition: "{{ lookup('file', '{{ item }}') | from_yaml }}"
+    wait: yes
+    wait_sleep: 10
+    wait_timeout: 30
   with_fileglob:
     - "{{ core_install_folder }}{{ core_install_folder_subpath }}/*.yml"
     - "{{ core_install_folder }}{{ core_install_folder_subpath }}/*.yaml"
